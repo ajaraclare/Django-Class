@@ -5,7 +5,10 @@ from django . http import HttpResponse
 # Create your views here.
 
 def home(request):
-    return HttpResponse("This is the Homepage")
+    return render(request,'home.html')
 
 def contact (request):
-    return HttpResponse("This is the Contact Page")
+    return render(request,'Contact.html')
+
+def services (request):
+    return render(request,'services.html')

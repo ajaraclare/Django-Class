@@ -19,5 +19,6 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include("class.urls"))
+    path('',include("class.urls")),
+    path('Streams/',include("Streams.urls"))
 ]

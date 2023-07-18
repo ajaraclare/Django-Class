@@ -8,7 +8,7 @@ def home(request):
     return render(request,'home.html')
 
 def contact (request):
-    return render(request,'Contact.html')
+    return render(request,'contact/Contact.html')
 
 def services (request):
     return render(request,'services.html')

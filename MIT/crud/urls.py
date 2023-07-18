@@ -6,6 +6,7 @@ from.import views
 app_name = "crud"
 
 urlpatterns = [
-  path('', views.home, name="home")
+  path('', views.home, name="home"),
+  path('insertdata/',views.insertdata,name="insertdata")
 
 ]

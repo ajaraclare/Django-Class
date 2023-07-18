@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+{% load static %}
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,15 +13,21 @@
 <body>
 <h1>Django crud</h1>
 
+
+
 <div class="container">
 
     <div class="row">
 
         <div class="col-md-5">
-        <form action="">
-            <input type="text" placeholder="Name" class="form-control mt-5">
-            <input type="text" placeholder="School" class="form-control mt-5">
-            <input type="email" placeholder="Email" class="form-control mt-5">
+
+        <form action="{% url 'crud:insertdata' %}" method="POST">
+
+            {% csrf_token %}
+
+            <input type="text" placeholder="Name" class="form-control mt-5" name="name">
+            <input type="text" placeholder="School" class="form-control mt-5" name="school">
+            <input type="email" placeholder="Email" class="form-control mt-5" name="email">
 
             <input type="submit" placeholder="Submit" class="form-control btn btn-danger mt-5">
         </form>
@@ -66,14 +74,12 @@
 
     </div>
 
-
-
-
-
 </div>
 
 
-
+<div class="container">
+   <img src="{% static 'image/emoji.jpg' %}" alt="" height="100%">
+</div>
 
 </body>
 </html>

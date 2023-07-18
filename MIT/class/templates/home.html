@@ -1,9 +1,17 @@
 {% extends 'layout.html'%}
 
+{% load static %}
+
 {% block body %}
 
 
 <h1>HELLO WORLD!</h1>
-<p>Welcome to the Home page</p>
+<p>Welcome to the Home page
+
+
+<div class="container">
+  <img src="{% static 'image/stars.jpg' %}" alt="" height="100%">
+</div>
+
 
 {%endblock%}

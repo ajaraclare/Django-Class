@@ -21,3 +21,15 @@ def insertdata(request):
         # print(name,school,email)
 
     return render(request, 'index.html')
+
+def delete(request,id):
+    dd = Students.objects.get(id=id)
+    dd.delete()
+    return render (request, 'index.html')
+
+def editdata(request,id):
+    ddd = Students.objects.get(id=id)
+
+    context = {"ddd": ddd}
+
+    return render(request, 'edit.html', context)

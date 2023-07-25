@@ -58,8 +58,14 @@
       <td>{{ k.name }}</td>
       <td>{{ k.school }}</td>
       <td>{{ k.email }}</td>
-        <td>Edit</td>
-        <td>Delete</td>
+        
+        <td>
+            <a href="/crud/editdata/{{k.id}}" class="btn btn-warning">Edit</a>
+        </td>
+        
+        <td>
+            <a href="/crud/delete/{{ k.id }}" class="btn btn-danger">Delete</a>
+        </td>
     </tr>
 
   {% endfor %}

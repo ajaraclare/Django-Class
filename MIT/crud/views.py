@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from . models import Students
 
@@ -18,6 +18,8 @@ def insertdata(request):
         data = Students(name=name, school=school, email=email)
         data.save()
 
+        return redirect('/crud')
+
         # print(name,school,email)
 
     return render(request, 'index.html')
@@ -25,9 +27,25 @@ def insertdata(request):
 def delete(request,id):
     dd = Students.objects.get(id=id)
     dd.delete()
+
+    return redirect('/crud')
+
     return render (request, 'index.html')
 
 def editdata(request,id):
+    if request.method == "POST":
+        name = request.POST['name']
+        school = request.POST['school']
+        email = request.POST['email']
+
+        edit = Students.objects.get(id=id)
+
+        edit.name = name
+        edit.school = school
+        edit.email = email
+
+        edit.save()
+
     ddd = Students.objects.get(id=id)
 
     context = {"ddd": ddd}

@@ -8,12 +8,23 @@
 
     <link rel="stylesheet" href="{% static 'style.css' %}">
 
+    <style>
+        .active{
+    color: red;
+}
+
+a{
+    text-decoration: none ;
+}
+
+    </style>
+
 </head>
 <body>
 
-<a href="/">Home</a>
+<a href="/" class="{% if navbar == 'home' %} active {% endif %} ">Home</a>
 
-<a href="{% url 'class:Contact' %}">Contact</a>
+<a href="{% url 'class:Contact' %}" class="{% if navbar == 'contact' %} active {% endif %} ">Contact</a>
 
 <a href="{% url 'crud:home' %}">Crud</a>
 

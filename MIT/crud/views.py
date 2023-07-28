@@ -4,10 +4,17 @@ from . models import Students
 
 # Create your views here.
 def home(request):
+    # d = Students.objects.all()
+
+
+    return render(request, 'index.html' )
+
+
+def students(request):
     d = Students.objects.all()
 
+    return render(request, 'students.html', {"d": d})
 
-    return render(request, 'index.html', {"d":d} )
 
 def insertdata(request):
     if request.method =="POST":
@@ -18,7 +25,7 @@ def insertdata(request):
         data = Students(name=name, school=school, email=email)
         data.save()
 
-        return redirect('/crud')
+        return redirect('/crud/students/')
 
         # print(name,school,email)
 
@@ -45,6 +52,8 @@ def editdata(request,id):
         edit.email = email
 
         edit.save()
+
+        return redirect('/crud')
 
     ddd = Students.objects.get(id=id)
 

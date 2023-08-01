@@ -21,8 +21,9 @@ def insertdata(request):
         name = request.POST.get('name')
         school = request.POST.get('school')
         email = request.POST.get('email')
+        image = request.FILES.get('image')
 
-        data = Students(name=name, school=school, email=email)
+        data = Students(name=name, school=school, email=email, image=image)
         data.save()
 
         return redirect('/crud/students/')

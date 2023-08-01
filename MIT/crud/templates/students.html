@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+{% load static %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,7 +11,24 @@
 </head>
 <body>
 
- <table class="table">
+<div class="container">
+    <div class="row">
+
+        {% for k in d %}
+        <div class="col-md-3 text-center">
+            <img src="/media/{{k.image}}" width="100%" height="100px">
+            <p>{{ k.name }}</p>
+            <p>{{ k.school }}</p>
+            <p>{{ k.email }}</p>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+
+
+ <table class="table" hidden>
   <thead>
     <tr>
       <th scope="col">#</th>

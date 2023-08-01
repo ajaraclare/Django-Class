@@ -24,13 +24,14 @@
 
         <div class="col-md-5">
 
-        <form action="{% url 'crud:insertdata' %}" method="POST">
+        <form action="{% url 'crud:insertdata' %}" method="POST" enctype="multipart/form-data">
 
             {% csrf_token %}
 
-            <input type="text" placeholder="Name" class="form-control mt-5" name="name">
-            <input type="text" placeholder="School" class="form-control mt-5" name="school">
-            <input type="email" placeholder="Email" class="form-control mt-5" name="email">
+            <input type="text" placeholder="Name" class="form-control mt-5" name="name" required>
+            <input type="text" placeholder="School" class="form-control mt-5" name="school" required>
+            <input type="email" placeholder="Email" class="form-control mt-5" name="email" required>
+            <input type="file" class="form-control mt-5" name="image" accept="image/*" required>
 
             <input type="submit" placeholder="Submit" class="form-control btn btn-danger mt-5">
         </form>
